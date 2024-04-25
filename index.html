@@ -9,8 +9,34 @@
   </head>
 
   <body>
-    <img class="small-image" src="/jslogo.png" alt="JavaScript Logo" />
-    <label for="myInput">Type something:</label>
-    <input name="myInput" type="text" id="myInput" />
+
+    <h1>Mein Bücherregal</h1>
+    
+    <form id="book-form">
+        <label for="title">Titel:</label>
+        <input type="text" id="title" name="title" required><br>
+
+        <label for="author">Autor:</label>
+        <input type="text" id="author" name="author" required><br>
+
+        <label for="price">Preis:</label>
+        <input type="number" id="price" name="price" step="0.01" required><br>
+
+        <label for="notes">Anmerkungen:</label>
+        <textarea id="notes" name="notes"></textarea><br>
+
+        <label for="ranking">Sterneranking:</label>
+        <select id="ranking" name="ranking">
+            <option value="1">1 Stern</option>
+            <option value="2">2 Sterne</option>
+            <option value="3">3 Sterne</option>
+            <option value="4">4 Sterne</option>
+            <option value="5">5 Sterne</option>
+        </select><br>
+
+        <button type="submit">Buch speichern</button>
+    </form>
+
+    <div id="books-display"></div>
   </body>
 </html>
