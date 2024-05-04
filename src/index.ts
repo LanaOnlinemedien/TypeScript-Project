@@ -1,6 +1,6 @@
 import './styles/styles.css';
 
-import { showBooks } from './dom-utils.ts';
+import { showBooks, showTotalValue } from './dom-utils.ts';
 
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('book-form') as HTMLFormElement;
@@ -13,6 +13,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const ranking = parseInt((document.getElementById('ranking') as HTMLSelectElement).value);
 
         showBooks({title, author, price, notes, ranking});
+        showTotalValue(price);
     };
 });
+
+
+
 

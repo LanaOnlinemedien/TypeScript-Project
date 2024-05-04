@@ -7,3 +7,14 @@ export function showBooks(book: { title: string; author: string; price: number; 
         <p>Sterneranking: ${"★".repeat(book.ranking)}</p>
     </div>`;
 }
+
+let totalValue = 0; // Variable zur Speicherung des Gesamtwertes
+
+export function showTotalValue(price: number): void {
+    totalValue += price; // Addiere den Preis des neuen Buches zum Gesamtwert
+    const totalValueDiv = document.getElementById('total-value-display') as HTMLDivElement;
+    if (totalValueDiv) {
+        totalValueDiv.textContent = `Gesamtwert des Bücherregals: ${totalValue.toFixed(2)}€`;
+    }
+}
+

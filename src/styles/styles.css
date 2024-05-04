@@ -42,7 +42,7 @@ select {
 }
 
 button {
-    background-color: #ad365a;
+    background-color: #328da8;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -54,16 +54,32 @@ button {
 }
 
 button:hover {
-    background-color: #ff95b5;
+    background-color: #55c8eb;
 }
 
-/* Styling für die Bücheranzeige */
+#total-value-display {
+    background: #328da8;
+    color: white;
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    max-width: 600px; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+/* Styling der Bücheranzeige */
 #books-display div {
     background: #fff;
     padding: 15px;
     margin-bottom: 10px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    max-width: 600px; 
+    margin-left: auto; 
+    margin-right: auto;
 }
 
 #books-display h3 {
