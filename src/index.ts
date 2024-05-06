@@ -1,8 +1,7 @@
 import './styles/styles.css';
 import { form, displayDiv, totalValueDiv } from "./dom-utils.ts";
 
-document.addEventListener('DOMContentLoaded', function () {
-    form.onsubmit = function(event) {
+form.addEventListener('submit', function (event: Event) {
         event.preventDefault();
         const title = (document.getElementById('title') as HTMLInputElement).value;
         const author = (document.getElementById('author') as HTMLInputElement).value;
@@ -12,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         showBooks({title, author, price, notes, ranking});
         showTotalValue(price);
-    };
 });
 
 function showBooks(book: { title: string; author: string; price: number; notes: string; ranking: number }) {
@@ -24,13 +22,12 @@ function showBooks(book: { title: string; author: string; price: number; notes: 
     </div>`;
 }
 
-let totalValue = 0; // Variable zur Speicherung des Gesamtwertes
+
 
 function showTotalValue(price: number): void {
+    let totalValue = 0; // Variable zur Speicherung des Gesamtwertes
     totalValue += price; // Addiere den Preis des neuen Buches zum Gesamtwert
-    if (totalValueDiv) {
-        totalValueDiv.textContent = `Gesamtwert des Bücherregals: ${totalValue.toFixed(2)}€`;
-    }
+    totalValueDiv.textContent = `Gesamtwert des Bücherregals: ${totalValue.toFixed(2)}€`;
 }
 
 
