@@ -15,3 +15,8 @@ export function saveBook(book: Book) {
     //die alten und neuen Bücher werden wieder in den Local Storage gespeichert
     localStorage.setItem('books', JSON.stringify(books));
 }
+
+export function getBooks(): Book[] {
+    //Holt alle Bücher aus dem Local Storage
+    return JSON.parse(localStorage.getItem('books') as string) || [];
+}
